@@ -9,38 +9,37 @@
             Padding="30"
             Spacing="20">
 
-           
             <Label
                 Text="Conversor de Unidades"
                 FontSize="24"
                 HorizontalOptions="Center" />
 
-            
             <Picker
                 x:Name="FromUnitPicker"
                 Title="Unidad de Origen"
                 HorizontalOptions="Fill" />
 
-            
             <Picker
                 x:Name="ToUnitPicker"
                 Title="Unidad de Destino"
                 HorizontalOptions="Fill" />
 
-            
             <Entry
                 x:Name="InputEntry"
                 Placeholder="Cantidad"
                 Keyboard="Numeric"
                 HorizontalOptions="Fill" />
 
-            
             <Button
                 Text="Convertir"
                 Clicked="OnConvertClicked"
                 HorizontalOptions="Fill" />
 
-          
+            <Button
+                Text="Limpiar"
+                Clicked="OnClearClicked"
+                HorizontalOptions="Fill" />
+
             <Label
                 x:Name="ResultLabel"
                 FontSize="18"

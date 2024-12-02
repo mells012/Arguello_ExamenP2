@@ -46,10 +46,21 @@ namespace Arguello_ExamenP2
             string fromUnit = FromUnitPicker.SelectedItem.ToString();
             string toUnit = ToUnitPicker.SelectedItem.ToString();
 
-            double baseValue = inputValue / unitConversions[fromUnit]; // Convertir a la unidad base
-            double convertedValue = baseValue * unitConversions[toUnit]; // Convertir a la unidad destino
+            double baseValue = inputValue / unitConversions[fromUnit]; 
+            double convertedValue = baseValue * unitConversions[toUnit]; 
 
             ResultLabel.Text = $"{inputValue} {fromUnit} = {convertedValue:F2} {toUnit}";
         }
+
+        private void OnClearClicked(object sender, EventArgs e)
+        {
+            
+            FromUnitPicker.SelectedIndex = -1; 
+            ToUnitPicker.SelectedIndex = -1;   
+            InputEntry.Text = string.Empty;    
+            ResultLabel.Text = string.Empty;   
+        }
+
+
     }
 }
