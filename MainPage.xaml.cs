@@ -5,22 +5,21 @@ namespace Arguello_ExamenP2
 {
     public partial class MainPage : ContentPage
     {
-        // Diccionario para conversiones
+
         private readonly Dictionary<string, double> unitConversions = new Dictionary<string, double>
         {
-            { "Metros", 1 },
-            { "Kilómetros", 0.001 },
-            { "Centímetros", 100 },
-            { "Milímetros", 1000 },
-            { "Pulgadas", 39.3701 },
-            { "Pies", 3.28084 }
+            { "Metros cuadrados", 1 }, 
+            { "Hectáreas", 0.0001 },
+            { "Acres", 0.000247105 },
+            { "Kilómetros cuadrados", 1e-6 },
+            { "Centímetros cuadrados", 10000 }
         };
 
         public MainPage()
         {
             InitializeComponent();
 
-            // Poblamos los pickers con las unidades
+            
             foreach (var unit in unitConversions.Keys)
             {
                 FromUnitPicker.Items.Add(unit);
@@ -47,9 +46,10 @@ namespace Arguello_ExamenP2
             string toUnit = ToUnitPicker.SelectedItem.ToString();
 
             double baseValue = inputValue / unitConversions[fromUnit]; 
-            double convertedValue = baseValue * unitConversions[toUnit]; 
+            double convertedValue = baseValue * unitConversions[toUnit];
 
             ResultLabel.Text = $"{inputValue} {fromUnit} = {convertedValue:F2} {toUnit}";
+
         }
 
         private void OnClearClicked(object sender, EventArgs e)
